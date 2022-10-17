@@ -9,25 +9,15 @@
     * this will overwrite your local copy with the file from your branch
 
 
-### How to Checkin a file to the repo
+### How to Commit files to the repo
 
-
-
-* git add of all modified files to be checked in
+* git add of all modified files to be checked in (e.g. git add -u)_
 * git commit
     * This will bring up the editor so you can enter the commit message.  First line is up to 50 characters.  Next lines are detailed description.
 * git push origin &lt;branch>
     * This pushes our local branch out to the repo
 
-
-### To check if the build worked
-
-Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch the build and automated tests run.  After our build succeeds on our branch, you can merge your code into master, you can go do a pull request on github website.  If the buttons are all green you can do a merge.
-
-
-### To get the latest code into our branch
-
-
+### To get the latest code into our branch via merge
 
 * git checkout &lt;branch>
     * switch branch to the one you want to work on
@@ -41,8 +31,6 @@ Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch th
 
 ### Rebase your branch to master
 
-
-
 * git branch - Make sure you’re on the right branch
 * git status - Make sure you don’t have anything changed
 * git fetch - Get the latest code from remote branches
@@ -53,8 +41,6 @@ Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch th
 
 ### How to see your changes
 
-
-
 * git diff
     * show the changes to modified unstaged files
 * git diff --cached
@@ -62,10 +48,7 @@ Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch th
 * git diff &lt;sha1> or git show &lt;sha1>
     * show the changes to an already commited change, _e.g. **git diff 5b1822d337945228b474c06f76544051631e45e1**_
 
-
 ### How to merge updates from master to my branch
-
-
 
 * git checkout master
 * git pull origin
@@ -76,8 +59,6 @@ Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch th
 
 ### How to create a new branch from master
 
-
-
 * git checkout -b &lt;new branch> master
 * git checkout -b &lt;new branch> &lt;some other branch>
     * this would create a new branch off of another branch that’s not master
@@ -85,69 +66,49 @@ Go to [https://iceberg.retailnext.us](https://iceberg.retailnext.us) to watch th
 
 ### Merge changes from my branch into the parent branch that’s not master
 
-Let’s say my branch is imputing-cli and it’s parent branch is imputing-support.  I have made a bunch of changes in imputing-cli and now I want to push them over into imputing-support.
+Let’s say my branch is fubar-cli and it’s parent branch is fubar-support.  I have made a bunch of changes in fubar-cli and now I want to push them over into fubar-support.
 
-
-
-* git checkout imputing-cli
+* git checkout fubar-cli
     * start in my branch
-* git rebase origin/imputing-support
-* git checkout imputing-support
+* git rebase origin/fubar-support
+* git checkout fubar-support
     * switch to the other branch
-* git merge imputing-cli
+* git merge fubar-cli
     * this will bring up the editor to enter a commit description
 * git push
 
-
 ### How to get the latest code from master
-
-
 
 * `git pull origin master` will get the latest code from the remote master.  `git pull` means `git fetch` followed by `git merge`. It fetches the content from the remote, then merges it into your current branch. But `origin/master` is a local branch (tracking a remote branch). If you want to merge it, you don't need to fetch anything. It's misleading to say `git pull origin/master` when you're not actually fetching from a remote.
 
 
 ### Show the files in a previous commit
 
-
-
 * `git show --pretty="" --name-only`
 
+### Get Fred's latest changes from his branch (this is very dangerous, may overwrite your local changes)
 
-### Get Dennis latest changes from his branch (this is very dangerous, may overwrite your local changes)
-
-
-
-* Git reset HEAD --hard origin/dennis-branch
+* Git reset HEAD --hard origin/fred-branch
 
 
 ### Show commits on my branch not in master
 
-
-
 *  git cherry -v master &lt;my_branch_name>
-
 
 ### Who changed a line in a file
 
-
-
 * git log -L 1377,1377:./cloud_ui/app/controllers/api/v1/cameras_controller.rb or
 * git blame -L 48,+2 dmn/testapp/src/PowerFailTestUtils.cpp
-
 
 ### Compare files from two different branches:
 
 To compare my current file to master:
 
-
 ```
 git diff ..master path/to/file
 ```
 
-
 The double-dot prefix means "from the current working directory to". You can also say:
-
-
 
 * `master..`, i.e. the reverse of above. This is the same as `master`.
 * `mybranch..master`, explicitly referencing a state other than the current working tree.
@@ -224,15 +185,11 @@ You can use the _git diff-tree _command to get the list of files from the commit
 
 For this scenario you want to use the --untracked-files=no option which can be abbreviated as uno like this:
 
-
-
 * git status -uno
 
 
 ### Get a single file from a stash
 
 Do _git stash list _to get the list of stashes. And then extract the file you want using _get checkout _like this:
-
-
 
 * git checkout stash@{0} --  internal/db/sqlite/sqlstring.go
