@@ -144,7 +144,7 @@ You just need to checkout the branch that you’re on again:
 You can use git show for this:
 
 
-    git show &lt;branch>:file, e.g.
+    git show <branch>:file, e.g.
 
 
     git show csd/nxrpc_nlm:protocols/nfs/src/Protocols/NLM/nlm_nxrpc.c
