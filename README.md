@@ -114,6 +114,9 @@ The double-dot prefix means "from the current working directory to". You can als
 * `mybranch..master`, explicitly referencing a state other than the current working tree.
 * `v2.0.1..master`, i.e. referencing a tag.
 * `[refspec]..[refspec]`, basically anything identifiable as a code state to git.
+    * git clone git@github.com:repo1/repo-something.git
+    * git fetch git@github.com:repo2/repo-something-else.git
+    * git diff master:repo-something/foo-bar/ FETCH_HEAD:repo-something-else/bar-foo/
 
 
 ### Show tagged commits:
