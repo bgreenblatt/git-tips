@@ -157,7 +157,7 @@ If you want to save the file, then you can just redirect the output of git show 
 
 ### Edit All Changed files in your branch
 
-You can do this easily using the _--name-only _option to _git diff _by creating an alias like this using so-called backticks:
+You can do this easily using the **--name-only** option to **git diff** by creating an alias like this using so-called backticks:
 
 
     alias vimgit='vim `git diff --name-only`'
@@ -178,7 +178,7 @@ However, please be warned. If some of the commits between SHA and the tip of you
 
 ### Edit all the files in some previous commit
 
-You can use the _git diff-tree _command to get the list of files from the commit and pass into vim like this:
+You can use the **git diff-tree** command to get the list of files from the commit and pass into vim like this:
 
 
     _vim `git diff-tree --no-commit-id --name-only -r 1005868ea5e4a769f0fdb18f96580f804966d198`_
