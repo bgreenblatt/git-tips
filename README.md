@@ -13,7 +13,7 @@
 
 * git add of all modified files to be checked in (e.g. git add -u)_
 * git commit
-    * This will bring up the editor so you can enter the commit message.  First line is up to 50 characters.  Next lines are detailed description.
+    * This will bring up the editor so you can enter the commit message.  First line is up to 50 characters.  Then put in a blacnk line. Next lines are detailed description.
 * git push origin &lt;branch>
     * This pushes our local branch out to the repo
 
