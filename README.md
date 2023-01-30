@@ -193,6 +193,6 @@ For this scenario you want to use the --untracked-files=no option which can be a
 
 ### Get a single file from a stash
 
-Do _git stash list _to get the list of stashes. And then extract the file you want using _get checkout _like this:
+Do **git stash list** to get the list of stashes. And then extract the file you want using **get checkout** like this:
 
 * git checkout stash@{0} --  internal/db/sqlite/sqlstring.go
