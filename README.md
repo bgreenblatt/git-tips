@@ -36,7 +36,7 @@
 * git fetch - Get the latest code from remote branches
 * git rebase origin/master - Make sure to cross all fingers and toes before running this so there won’t be any conflicts
 * git status - If successful, should be empty
-* git push -f origin <your branch name> - Need to use the -f since we’ll be in a diverged state.  The warning will say: “Your branch and 'origin/<your branch name>' have diverged and have n and m different commits each, respectively.   (use "git pull" to merge the remote branch into yours).  Whatever you do, don’t do a git pull!!!
+* git push -f origin &lt;your branch name&gt; - Need to use the -f since we’ll be in a diverged state.  The warning will say: “Your branch and 'origin/&lt;your branch name&gt;' have diverged and have n and m different commits each, respectively.   (use "git pull" to merge the remote branch into yours).  Whatever you do, don’t do a git pull!!!
 
 
 ### How to see your changes
