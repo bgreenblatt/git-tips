@@ -196,3 +196,21 @@ For this scenario you want to use the --untracked-files=no option which can be a
 Do **git stash list** to get the list of stashes. And then extract the file you want using **get checkout** like this:
 
 * git checkout stash@{0} --  internal/db/sqlite/sqlstring.go
+
+### Cherry-pick a merge commit
+
+Usually cherry-picking a merge commit will require you to specify a value for the **-m option**. This is because the merge commit has two parents, and we need to tell git which parent we are using.
+
+So, you see something like this:
+
+    git show <merge commit>
+    commit <merge commit>
+    Merge: <parent commit 1>  <parent commit 2.
+    Author: someone.cool <someone.cool@noplace.nodomain>
+    Date:   Thu Feb 22 20:49:44 2024 -0800
+
+        Merge branch 'branch1' of ssh://noplace.nodomain/foo/bar into branch2
+
+So, now you can see the two parent commit ids of the merge commit. Usually it is the second parent, so you would specify -m 2 on the git cherry-pick command:
+
+    git cherry-pick -m 2 <merge commit>
