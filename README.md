@@ -214,3 +214,11 @@ So, you see something like this:
 So, now you can see the two parent commit ids of the merge commit. Usually it is the second parent, so you would specify -m 2 on the git cherry-pick command:
 
     git cherry-pick -m 2 <merge commit>
+
+### See deleted files
+
+   git log --diff-filter=D --summary 
+
+If you know the name of the file you want to find, you could do:
+
+   git log --follow -- <full-path>
