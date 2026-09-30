@@ -222,3 +222,11 @@ So, now you can see the two parent commit ids of the merge commit. Usually it is
 If you know the name of the file you want to find, you could do:
 
    git log --follow -- <full-path>
+
+### Find a local branch that has a change with a specific string
+
+To do this, you can use the `git grep` command. If your search string is `timing_event` then this command would work:
+
+     git grep "timing_event" $(git for-each-ref --format='%(refname:short)' refs/heads)
+
+`git for-each-ref` lists all local branch names and runs a multi-branch `git grep` against them. The output will show the commit/branch identifier alongside the matching line.
